@@ -1,0 +1,23 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.title {
+    font-size: rem(36);
+    color: $mainColor;
+    font-weight: 900;
+    line-height: 138%;
+    text-align: center;
+    text-transform: uppercase;
+    &_big {
+        
+        @include adaptiveValue("font-size", 46, 24);
+        @include adaptiveValue("line-height", 63, 30);
+        font-weight: 900;
+        text-transform: uppercase;
+        span {
+            color: $mainGreen;
+        }
+    }
+    span {
+        color: $mainGreen;
+    }
+    
+}

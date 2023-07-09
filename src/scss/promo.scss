@@ -1,0 +1,130 @@
+.promo {
+    height: rem(900);
+    position: relative;
+	max-width: rem(1440);
+	margin: 0 auto;
+	overflow: hidden;
+    //@include adaptiveValue("padding-top", 40, 10);
+    //@include adaptiveValue("padding-bottom", 80, 20);
+    // .promo__media
+    &__media {
+        position: absolute;
+        display: flex;
+        top: -20px;
+        right: 0;
+        
+    }
+    // &::before {
+	// 	content: "";
+    // 	background-color: #ebdbdb;
+    // 	position: absolute;
+    // 	height: 297px;
+    // 	right: 362px;
+    // 	bottom: -123px;
+    // 	width: 30.645833%;
+    // 	transform: rotate(43deg);
+    // 	z-index: 2;
+	// 	overflow: hidden;
+	// }
+
+    // .promo__bg
+
+    &__bg {
+    }
+
+    // .promo__body
+
+    &__body {
+    }
+}
+.body-promo {
+
+    // .body-promo__container
+
+    &__container {
+        display: flex;
+		justify-content: space-between;
+        align-items: center;
+    }
+
+    // .body-promo__item
+
+    &__item {
+    }
+
+    // .body-promo__media
+
+    &__media {
+    }
+}
+.item-body-promo {
+    position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: rem(600);
+	max-width: rem(500);
+	padding: rem(50) rem(40);
+	border-radius: rem(40);
+	box-shadow: 0px 20px 50px -15px rgba(29, 117, 101, 0.30);
+	background: #ffffff70;
+	z-index: 3;
+    overflow: hidden;
+    @include adaptiveValue("row-gap", 40, 15);
+    &__title {
+        z-index: 2;
+        position: relative;
+        &::before{
+			content:'';
+			position: absolute;
+			height: rem(4);
+			width: rem(50);
+			border-radius: rem(10);
+			background: $mainGreen;
+			bottom: rem(-10);
+		}
+    }
+
+    // .item-body-promo__text
+
+    &__text {
+        font-weight: 500;
+		line-height: 151%;
+        @include adaptiveValue("font-size", 14, 12);
+    }
+    &__links {
+        display: flex;
+		gap: rem(10);
+        overflow: hidden;
+        align-items: flex-start;
+        
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            
+        }
+        &:nth-child(2) {
+            margin-bottom: rem(10);
+        }
+    }
+}
+
+.media-body-promo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(15);
+
+    &__image {
+        position: relative;
+		
+        height: 100%;
+        max-width: 100%;
+		z-index: 4;
+        img {
+            //position: absolute;
+            overflow: hidden;
+            max-width: 100%;
+            
+        }
+    }
+}
