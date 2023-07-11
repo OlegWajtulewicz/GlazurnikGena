@@ -1,0 +1,122 @@
+.services {
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+    // .services__container
+
+    &__container {
+    }
+
+    // .services__title
+
+    &__title {
+        position: relative;
+        &::before{
+			content:'';
+			position: absolute;
+			height: rem(4);
+			width: rem(50);
+			border-radius: rem(10);
+			background: $mainGreen;
+			bottom: rem(-10);
+            right: 50%;
+            transform: translate(50%);
+		}
+    }
+
+    // .services__slider
+
+    &__slider {
+        overflow: hidden;
+	    @media (max-width: em(700)){
+            width: rem(285); 
+        }
+        @media (max-width:$mobileSmall){
+            width: 100%; 
+        }
+        
+    }
+
+    // .services__wrapper
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+	    flex-wrap: wrap;
+        gap: rem(8);
+        width: rem(278);
+        padding: rem(65) rem(0) rem(40) rem(0);
+        @media (max-width: em(1296)){
+            justify-content: space-around; 
+        }
+        @media (max-width: em(700)){
+            justify-content: initial;
+            flex-wrap: nowrap; 
+        }
+    }
+
+    // .services__slide
+
+    &__slide {
+        width: rem(278) !important;
+        border-radius: rem(30);
+        @media (max-width: em(700)){
+            width: 100% !important;
+            margin: 0;
+            flex-shrink: 0; 
+            
+            img {
+                width: 100% !important;
+                overflow: hidden;
+                margin: 0 auto;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+
+    // .services__descr
+
+    &__descr {
+    }
+
+    // .services__button
+
+    &__button {
+    }
+}
+.title {
+}
+.swiper {
+    &__container {
+        overflow: hidden;
+	    width: 100%;
+    }
+}
+.swiper-wrapper {
+
+}
+.swiper-slide {
+}
+.swiper-pagination {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+.swiper-scrollbar {
+}
+.descr-services {
+
+    // .descr-services__title
+
+    &__title {
+    }
+
+    // .descr-services__text
+
+    &__text {
+    }
+}
+.button {
+}

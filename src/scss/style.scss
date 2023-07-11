@@ -152,7 +152,37 @@ body {
 // Підключення стилів окремих блоків
 @import "header";
 @import "promo";
+@import "services";
 @import "footer";
 
 // Підключення стилів окремих сторінок
 @import "home";
+
+
+
+// ::-webkit-scrollbar {
+//     width: 10px;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background: #d4d4d4;
+//     box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background: #939393;
+//     border-radius: 8px;
+//     border: 3px solid #d4d4d4;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #7c7c7c;
+// }
+
+
+
+
+// body::-webkit-scrollbar {
+//     //width: 13px;
+//     height: 13px;
+//   }

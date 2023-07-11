@@ -34,7 +34,7 @@ import '@scss/libs/gallery/lightgallery.scss';
 // import '@scss/libs/gallery/lg-relative-caption.scss';
 
 // Усі стилі
-// import '@scss/libs/gallery/lightgallery-bundle.scss';
+import '@scss/libs/gallery/lightgallery-bundle.scss';
 
 // Запуск
 const galleries = document.querySelectorAll('[data-gallery]');
