@@ -24,136 +24,143 @@ import "../../scss/libs/swiper.scss";
 import 'swiper/css';
 
 
-// function bildSliders() {
-// 	//BildSlider
-// 	let sliders = document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)');
-// 	if (sliders) {
-// 		sliders.forEach(slider => {
-// 			slider.parentElement.classList.add('swiper');
-// 			slider.classList.add('swiper-wrapper');
-// 			for (const slide of slider.children) {
-// 				slide.classList.add('swiper-slide');
-// 			}
-// 		});
-// 	}
-// }
-
-
-
-// Ініціалізація слайдерів
 function initSliders() {
-	// Список слайдерів
+	// Список слайдеров
 	if (document.querySelector('.services__slider')) {
 		let mySwiper;
+		const slider = document.querySelector('.services__slider'); // Добавлено объявление переменной slider
 
-	// 	function mobileSlider() {
-	// 		if (window.innerWidth <= 700 && slider.dataset.mobile == 'false') {
-	// 			mySwiper = new Swiper(slider, {
-	// 				slidesPerView: 1,
-	// 				spaceBetween: 10,
-	// 				loop: true,
-	// 				slideClass: 'swiper-slide'
-	// 			});
-		
-	// 			slider.dataset.mobile = 'true';
-	// 		}
-		
-	// 		if (window.innerWidth > 700) {
-	// 			slider.dataset.mobile = 'false';
-	// 			if (slider.classList.contains('swiper-initialized')) {
-	// 				mySwiper.destroy();
-	// 			}
-	// 		}
-	// 	}
-		
-	// 	mobileSlider()
-		
-	// 	window.addEventListener('resize', () => {
-	// 		mobileSlider();
-	// 	});
-	
+		function mobileSlider() {
+			if (window.innerWidth <= 700 && slider.dataset.mobile == 'false') {
+				mySwiper = new Swiper(slider, {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					loop: true,
+					slideClass: 'swiper-slide'
+				});
+
+				slider.dataset.mobile = 'true';
+			}
+
+			if (window.innerWidth > 700) {
+				slider.dataset.mobile = 'false';
+				if (slider.classList.contains('swiper-initialized')) {
+					mySwiper.destroy();
+				}
+			}
+		}
+
+		function handleResize() {
+			if (window.innerWidth > 700 && slider.dataset.mobile == 'true') {
+				// Удаляем слайдер, если ширина окна превышает 700px и слайдер уже инициализирован
+				slider.dataset.mobile = 'false';
+				mySwiper.destroy();
+			} else if (window.innerWidth <= 700 && slider.dataset.mobile == 'false') {
+				// Инициализируем слайдер, если ширина окна меньше или равна 700px и слайдер не инициализирован
+				mySwiper = new Swiper(slider, {
+					slidesPerView: 1,
+					spaceBetween: 3,
+					loop: true,
+					slideClass: 'swiper-slide'
+				});
+				slider.dataset.mobile = 'true';
+			}
+		}
+
+		handleResize(); // Вызываем функцию handleResize при инициализации
+
+		window.addEventListener('resize', handleResize); // Используем функцию handleResize как обработчик события resize
 	}
+}
+
+// Ініціалізація слайдерів
+// function initSliders() {
+// 	// Список слайдерів
+// 	if (document.querySelector('.services__slider')) {
+// 		let mySwiper;
+
+// 	}
 	
 
-	// Перевіряємо, чи є слайдер на сторінці
-	// if (document.querySelector('.services__slider')) { // Вказуємо склас потрібного слайдера
-	// 	// Створюємо слайдер
-	// 	let mySwiper;
+// 	// Перевіряємо, чи є слайдер на сторінці
+// 	// if (document.querySelector('.services__slider')) { // Вказуємо склас потрібного слайдера
+// 	// 	// Створюємо слайдер
+// 	// 	let mySwiper;
 
-	// 	new Swiper('.services__slider', { // Вказуємо склас потрібного слайдера
+// 	// 	new Swiper('.services__slider', { // Вказуємо склас потрібного слайдера
 		
-	// 		// Підключаємо модулі слайдера
-	// 		// для конкретного випадку
-	// 		//modules: [Navigation],
-	// 		observer: true,
-	// 		observeParents: true,
-	// 		slidesPerView: 1,
-	// 		spaceBetween: 15,
-	// 		autoHeight: true,
-	// 		//speed: 800,
+// 	// 		// Підключаємо модулі слайдера
+// 	// 		// для конкретного випадку
+// 	// 		//modules: [Navigation],
+// 	// 		observer: true,
+// 	// 		observeParents: true,
+// 	// 		slidesPerView: 1,
+// 	// 		spaceBetween: 15,
+// 	// 		autoHeight: true,
+// 	// 		//speed: 800,
 
-	// 		//touchRatio: 0,
-	// 		//simulateTouch: false,
-	// 		//loop: true,
-	// 		//preloadImages: false,
-	// 		//lazy: true,
+// 	// 		//touchRatio: 0,
+// 	// 		//simulateTouch: false,
+// 	// 		//loop: true,
+// 	// 		//preloadImages: false,
+// 	// 		//lazy: true,
 
-	// 		/*
-	// 		// Ефекти
-	// 		effect: 'fade',
-	// 		autoplay: {
-	// 			delay: 3000,
-	// 			disableOnInteraction: false,
-	// 		},
-	// 		*/
+// 	// 		/*
+// 	// 		// Ефекти
+// 	// 		effect: 'fade',
+// 	// 		autoplay: {
+// 	// 			delay: 3000,
+// 	// 			disableOnInteraction: false,
+// 	// 		},
+// 	// 		*/
 
-	// 		// Пагінація
-	// 		/*
-	// 		pagination: {
-	// 			el: '.swiper-pagination',
-	// 			clickable: true,
-	// 		},
-	// 		*/
+// 	// 		// Пагінація
+// 	// 		/*
+// 	// 		pagination: {
+// 	// 			el: '.swiper-pagination',
+// 	// 			clickable: true,
+// 	// 		},
+// 	// 		*/
 
-	// 		// Скроллбар
-	// 		/*
-	// 		scrollbar: {
-	// 			el: '.swiper-scrollbar',
-	// 			draggable: true,
-	// 		},
-	// 		*/
+// 	// 		// Скроллбар
+// 	// 		/*
+// 	// 		scrollbar: {
+// 	// 			el: '.swiper-scrollbar',
+// 	// 			draggable: true,
+// 	// 		},
+// 	// 		*/
 
 			
-	// 		/*
-	// 		// Брейкпоінти
-	// 		breakpoints: {
-	// 			640: {
-	// 				slidesPerView: 1,
-	// 				spaceBetween: 0,
-	// 				autoHeight: true,
-	// 			},
-	// 			768: {
-	// 				slidesPerView: 2,
-	// 				spaceBetween: 20,
-	// 			},
-	// 			992: {
-	// 				slidesPerView: 3,
-	// 				spaceBetween: 20,
-	// 			},
-	// 			1268: {
-	// 				slidesPerView: 4,
-	// 				spaceBetween: 30,
-	// 			},
-	// 		},
-	// 		*/
-	// 		// Події
-	// 		on: {
+// 	// 		/*
+// 	// 		// Брейкпоінти
+// 	// 		breakpoints: {
+// 	// 			640: {
+// 	// 				slidesPerView: 1,
+// 	// 				spaceBetween: 0,
+// 	// 				autoHeight: true,
+// 	// 			},
+// 	// 			768: {
+// 	// 				slidesPerView: 2,
+// 	// 				spaceBetween: 20,
+// 	// 			},
+// 	// 			992: {
+// 	// 				slidesPerView: 3,
+// 	// 				spaceBetween: 20,
+// 	// 			},
+// 	// 			1268: {
+// 	// 				slidesPerView: 4,
+// 	// 				spaceBetween: 30,
+// 	// 			},
+// 	// 		},
+// 	// 		*/
+// 	// 		// Події
+// 	// 		on: {
 
-	// 		}
-	// 	});
+// 	// 		}
+// 	// 	});
 	
-	// }
-}
+// 	// }
+// }
 // const slider = document.querySelector('.slider-container');
 // let mySwiper;
 // function mobileSlider() {

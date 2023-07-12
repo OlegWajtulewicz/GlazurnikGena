@@ -433,6 +433,8 @@ export function menuInit() {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
+			} else if (e.target.closest('.menu__body a')) {
+				menuClose();
 			}
 			
 		});
@@ -748,4 +750,21 @@ export function dataMediaQueries(array, dataSetValue) {
 	}
 }
 //================================================================================================================================================================================================================================================================================================================
+
+// фиксация меню при скроле
+// function fixedNav() {
+// 	const nav = document.querySelector('nav')
+
+// 	// указываем в пикселях, сколько нужно проскролить
+// 	const breakpoint = 800
+// 	if (window.scrollY >= breakpoint) {
+// 		nav.classList.add('fixed__nav')
+// 	} else {
+// 		nav.classList.remove('fixed__nav')
+// 	}
+// }
+// window.addEventListener('scroll', fixedNav)
+
+/////////////////////////////////////////////////////////////////////////// 
+
 
