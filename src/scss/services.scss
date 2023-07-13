@@ -3,7 +3,8 @@
     @include adaptiveValue("padding-top", 50, 20);
     @include adaptiveValue("padding-bottom", 50, 20);
     // .services__container
-
+    overflow: hidden;
+    box-shadow: 0px 0px 40px -6px rgba(29, 117, 101, 0.20);
     &__container {
     }
 
@@ -63,7 +64,7 @@
     // .services__slide
 
     &__slide {
-        width: rem(285) !important;
+        width: rem(279) !important;
         border-radius: rem(30);
         @media (max-width: em(700)){
             width: 100% !important;

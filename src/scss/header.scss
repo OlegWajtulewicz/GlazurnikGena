@@ -1,6 +1,9 @@
 //====================================================================================================
 .header {
+	//display: flex;
 	position: relative;
+	height: rem(80);
+	align-items: center;
 	&__video {
 		position: fixed;
 		right: 0;
@@ -9,6 +12,13 @@
 		min-height: 100%;
 		z-index: -1;
 	}
+	&__container {
+		display: flex;
+		align-items: center;
+		height: rem(80);
+		justify-content: space-between;
+		gap: rem(15);
+	}
 	&._header-scroll {
 		position: fixed;
 		top: 0;
@@ -16,32 +26,16 @@
 		width: 100%;
 		background-color: $mainGreen;
 		z-index: 10;
-	}
-}
-.top-header {
-	
-	&__container {
-		display: flex;
+		height: rem(50);
+		
 		align-items: center;
-		height: rem(80);
-		justify-content: space-between;
-		//height: 100%;
-		gap: rem(15);
+		transition: all .3s ease 0s;
+		opacity: .9;
+		.header__container {
+			height: rem(50);
+		}
 	}
-
-	// .top-header__logo
-
-	&__logo {
-		background-image: url('@img/Logo.svg');
-		background-repeat: no-repeat;
-		width: rem(100);
-		height: rem(28);
-		display: flex;
-		cursor: pointer;
-	}
-
-	// .top-header__menu
-
+	
 	&__menu {
 		a {
 			color: #ffffff;
@@ -57,31 +51,30 @@
 			
 		}
 	}
+
+	&__logo {
+		background-image: url('@img/Logo.svg');
+		background-repeat: no-repeat;
+		width: rem(100);
+		height: rem(28);
+		display: flex;
+		cursor: pointer;
+	}
 }
+.header__lang._dynamic_adapt_ {
+	position: absolute;
+	top: rem(20);
+}
+
+	
+
 .menu-top-header {
 	&__list {
 		display: flex;
 		@include adaptiveValue("gap", 60, 15);
 	}
 }
-._header-scroll {
-	position: fixed;
-	background-color: $mainGreen;
-	top: -100%;
-	left: 0;
-	right: 0;
-	z-index: 10;
-	height: rem(50) !important;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: all .3s ease 0s;
-	opacity: .9;
-}
-._header-show {
-	transition: top .3s ease 0s;
-	top: 0;
-}
+
 
 //================================================== 
 
