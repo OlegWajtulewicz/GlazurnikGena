@@ -23,8 +23,23 @@ import "../../scss/libs/swiper.scss";
 // Повний набір стилів з node_modules
 import 'swiper/css';
 
+function bildSliders() {
+	//BildSlider
+	let sliders = document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)');
+	if (sliders) {
+		sliders.forEach(slider => {
+			slider.parentElement.classList.add('swiper');
+			slider.classList.add('swiper-wrapper');
+			for (const slide of slider.children) {
+				slide.classList.add('swiper-slide');
+			}
+		});
+	}
+}
+
 
 function initSliders() {
+	bildSliders();
 	// Список слайдеров
 	if (document.querySelector('.services__slider')) {
 		let mySwiper;
@@ -70,6 +85,31 @@ function initSliders() {
 		handleResize(); // Вызываем функцию handleResize при инициализации
 
 		window.addEventListener('resize', handleResize); // Используем функцию handleResize как обработчик события resize
+	}
+	if (document.querySelector('.testimonials__slider')) {
+		new Swiper('.testimonials__slider', {
+			effect: 'fade',
+			observer: true,
+			slidesPerView: 3,
+			spaceBetween: 20,
+			loop: true,
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				
+			},
+		})
 	}
 }
 

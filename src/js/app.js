@@ -61,7 +61,7 @@ flsFunctions.addTouchClass();
 Документація: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сніппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Модуль "Ефект хвиль"
@@ -111,7 +111,7 @@ flsForms.formFieldsInit({
 // flsForms.formQuantity();
 
 /* Модуль зіркового рейтингу */
-// flsForms.formRating();
+flsForms.formRating();
 
 /* Модуль роботи з select. */
 import './libs/select.js'

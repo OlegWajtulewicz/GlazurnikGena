@@ -120,7 +120,7 @@
         font-weight: 900;
         line-height: 138%;
         text-transform: uppercase;
-        width: em(300);
+        width: em(350);
         height: rem(50);
         position: relative;
         margin-right: em(10);
@@ -148,7 +148,9 @@
     // .descr-services__text
 
     &__text {
-        font-size: rem(12);
+        font-weight: 500;
+		line-height: math.div( 21, 14);
+        @include adaptiveValue("font-size", 14, 12);
         @media (max-width: em(1170)){
             text-align: center; 
         }
