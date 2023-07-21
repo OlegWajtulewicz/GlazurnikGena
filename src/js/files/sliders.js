@@ -7,7 +7,7 @@
 // Підключаємо слайдер Swiper з node_modules
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, {Navigation, Pagination} from 'swiper';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -19,9 +19,9 @@ EffectFade, Lazy, Manipulation
 // Базові стилі
 import "../../scss/base/swiper.scss";
 // Повний набір стилів з scss/libs/swiper.scss
-import "../../scss/libs/swiper.scss";
+//import "../../scss/libs/swiper.scss";
 // Повний набір стилів з node_modules
-import 'swiper/css';
+//import 'swiper/css';
 
 function bildSliders() {
 	//BildSlider
@@ -44,18 +44,25 @@ function initSliders() {
 	if (document.querySelector('.services__slider')) {
 		let mySwiper;
 		const slider = document.querySelector('.services__slider'); // Добавлено объявление переменной slider
-
+		
 		function mobileSlider() {
 			if (window.innerWidth <= 700 && slider.dataset.mobile == 'false') {
 				mySwiper = new Swiper(slider, {
+					//modules: [ Pagination ],
 					slidesPerView: 1,
 					spaceBetween: 0,
+					observer: true,
 					loop: true,
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true,
+					  },
 					slideClass: 'swiper-slide'
 				});
 
 				slider.dataset.mobile = 'true';
 			}
+			
 
 			if (window.innerWidth > 700) {
 				slider.dataset.mobile = 'false';
@@ -88,7 +95,7 @@ function initSliders() {
 	}
 	if (document.querySelector('.testimonials__slider')) {
 		new Swiper('.testimonials__slider', {
-			effect: 'fade',
+			//effect: 'fade',
 			observer: true,
 			slidesPerView: 3,
 			spaceBetween: 20,
@@ -96,8 +103,11 @@ function initSliders() {
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+					spaceBetween: 10,
+				},
+				600: {
+					slidesPerView: 2,
+					spaceBetween: 20,
 				},
 				768: {
 					slidesPerView: 2,
@@ -108,7 +118,8 @@ function initSliders() {
 					spaceBetween: 20,
 				},
 				
-			},
+			}
+			
 		})
 	}
 }

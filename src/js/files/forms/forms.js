@@ -159,6 +159,13 @@ export function formSubmit() {
 	const forms = document.forms;
 	if (forms.length) {
 		for (const form of forms) {
+
+	// =================================================================	
+		const file = form.querySelector('input[type="file"]');
+        file ? file.addEventListener('change', formAddFile) : null;
+        form.addEventListener('submit', formSubmitAction);
+	// ================================================================		
+
 			form.addEventListener('submit', function (e) {
 				const form = e.target;
 				formSubmitAction(form, e);
@@ -188,8 +195,12 @@ export function formSubmit() {
 					let responseResult = await response.json();
 					form.classList.remove('_sending');
 					formSent(form, responseResult);
+					// ================================ 
+					const formInputFile = form.querySelector('input[type="file"]');
+					formInputFile ? formInputFile.parentElement.nextElementSibling.innerHTML = '' : null;
+					// ==================================
 				} else {
-					alert("Помилка");
+					alert("Ошибка");
 					form.classList.remove('_sending');
 				}
 			} else if (form.hasAttribute('data-dev')) {	// Якщо режим розробки
@@ -204,6 +215,14 @@ export function formSubmit() {
 			}
 		}
 	}
+	// Добавление файла =========================================================
+	function formAddFile(e) {
+		const formInputFile = e.target;
+		const formFiles = formInputFile.files;
+		const fileName = formFiles.length ? formFiles[0].name : '';
+		formInputFile.parentElement.nextElementSibling.innerHTML = fileName;
+	}
+	// =======================================================================
 	// Дії після надсилання форми
 	function formSent(form, responseResult = ``) {
 		// Створюємо подію відправлення форми

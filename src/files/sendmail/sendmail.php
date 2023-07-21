@@ -24,20 +24,26 @@
 	//Кому відправити
 	$mail->addAddress('vajoleg@gmail.com'); // Вказати потрібний E-mail
 	//Тема листа
-	$mail->Subject = 'Привет! Это я';
+	$mail->Subject = 'Привет! Это SendForm';
 
 		//Тело письма
-		$body = '<h1>Встречайте супер письмо!</h1>';
+		$body = '<h1>Встречайте супер news!</h1>';
 	
 		if(trim(!empty($_POST['name']))){
-			$body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
+			$body .='<p>Имя: <strong>'.$_POST['name'].'</strong></p>';
 		}
 		if(trim(!empty($_POST['email']))){
-			$body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
+			$body.='<p>E-mail: <strong>'.$_POST['email'].'</strong></p>';
 		}
 		if(trim(!empty($_POST['phone']))){
-			$body.='<p><strong>Phone:</strong> '.$_POST['phone'].'</p>';
+			$body.='<p>Phone: <strong>'.$_POST['phone'].'</strong></p>';
 		}
+		if(trim(!empty($_POST['message']))){
+			$body.='<p>Message: <strong>'.$_POST['message'].'</strong></p>';
+		}
+		// if(trim(!empty($_POST['like']))){
+		// 	$body.='<p>Do you like? <strong>'.$_POST['like'].'</strong></p>';
+		// }
 		// if(trim(!empty($_POST['hand']))){
 		// 	$body.='<p><strong>Рука:</strong> '.$hand.'</p>';
 		// }
@@ -45,20 +51,20 @@
 		// 	$body.='<p><strong>Возраст:</strong> '.$_POST['age'].'</p>';
 		// }
 		
-		if(trim(!empty($_POST['message']))){
-			$body.='<p><strong>Сообщение:</strong> '.$_POST['message'].'</p>';
-		}
+		// if(trim(!empty($_POST['message']))){
+		// 	$body.='<p><strong>Сообщение:</strong> '.$_POST['message'].'</p>';
+		// }
 
 	//if(trim(!empty($_POST['email']))){
 		//$body.=$_POST['email'];
 	//}	
 	
 	//Прикрепить файл
-	//if(trim(!empty($_FILES['image']['tmp_name'])))  {
-		// $fileTmpName = $_FILES['image']['tmp_name'];
-		// $fileName = $_FILES['image']['tmp_name'];
-		// $mail->addAttachment($fileTmpName, $fileName);
-		//путь загрузки файла
+	if(trim(!empty($_FILES['image']['tmp_name'])))  {
+		$fileTmpName = $_FILES['image']['tmp_name'];
+		$fileName = $_FILES['image']['name'];
+		$mail->addAttachment($fileTmpName, $fileName);
+	//путь загрузки файла
 		// $filePath = __DIR__ . "/files/" . $_FILES['image']['name']; 
 		// //грузим файл
 		// if (copy($_FILES['image']['tmp_name'], $filePath)){
@@ -66,15 +72,15 @@
 		// 	$body.='<p><strong>Фото в приложении</strong>';
 		// 	$mail->addAttachment($fileAttach);
 		// }
-		//}
+		}
 
 	$mail->Body = $body;
 
 	//Відправляємо
 	if (!$mail->send()) {
-		$message = 'Помилка';
+		$message = 'Erroe';
 	} else {
-		$message = 'Дані надіслані!';
+		$message = 'Sand Mail!';
 	}
 
 	$response = ['message' => $message];

@@ -1,4 +1,79 @@
 <footer class="footer">
 	<div class="footer__container">
+		<div class="footer__map" >
+			<img src="@img/map.png" alt="map">
+		</div>
+		<div class="footer__body ">
+
+			<div class="footer__form-spoller">
+				<div data-spollers="991.98" class="footer__contacts-form contacts-form-footer">
+					<div class="contacts-form-footer__body">
+		
+					<button type="button" data-spoller class="contacts-form-footer__title title">Contact us</button>
+					
+						<form data-ajax data-validate data-required required data-popup-message="#thanks" method="POST" action="files/sendmail/sendmail.php" enctype="multipart/form-data" class="form">
+							<input type="text" name="name"  placeholder="What your name" class="form__input input">
+							<input required type="email" name="email" placeholder="E-mail*" class="form__input input">
+							<input required type="tel" name="phone" placeholder="Number phone*" class="form__input input">
+							<!-- <div class="form__option option-form">
+								<h4 class="option-form__title">Do you like Code?</h4>
+								<label class="option-form__item">
+									<input checked type="radio" name="like" value="Yes!" class="option-form__input">
+									<span class="option-form__text">Yes!</span>
+								</label>
+								<label class="option-form__item">
+									<input type="radio" name="like" value="Yes of cours!" class="option-form__input">
+									<span class="option-form__text">Yes of cours!</span>
+								</label>
+							</div> -->
+							<textarea name="message" placeholder="Message" class="form__input input"></textarea>
+							<div class="form__file file-form">
+								<label class="file-form__item">
+									<input name="image" type="file" accept=".jpg, .png .pdf" class="file-form__input button-small">
+									 <div class="file-form__button button">Choose File</div> 
+								</label>
+								 <div class="file-form__name"></div> 
+							</div>
+							<div class="checkbox-form__body">
+								<label class="form__checkbox checkbox-form">
+									<input required type="checkbox" name="thebest" class="checkbox__input input">
+									<span class="checkbox__text">I have read <a href="#">the Terms of Agreement</a> and agree to the terms*</span>
+								</label>
+								<button class="form__button button">Submit</button>
+							</div>
+						</form>
+
+					
+					</div>
+				</div>
+			</div>
+
+
+			<div class="footer__contacts">
+			<nav class="menu-footer">
+				<ul class="menu-footer__list">
+					<li class="menu-footer__item">
+						<a href="mailto:test@gmail.com" class="menu-footer__link-post icon-footer-email">test@gmail.com</a>
+					</li>
+					<li class="menu-footer__item">
+						<a href="tel:3035550105" class="menu-footer__link icon-ic_round-call">(303) 555-0105</a>
+					</li>
+					<li class="menu-footer__item icon-ic_round-location-on">
+						<div>
+							<p>2715 Ash Dr. San Jose, South Dakota</p>
+							<p>83475</p>
+						</div>
+						
+					</li>
+				</ul>
+			</nav>
+			</div>
+			
+	</div>
+
+
 	</div>
 </footer>
+<section class="footer-foot">
+
+</section>

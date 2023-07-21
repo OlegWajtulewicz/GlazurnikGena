@@ -40,16 +40,12 @@
         
     }
 
-    // .services__wrapper
 
     &__wrapper {
         display: flex;
         justify-content: space-between;
 	    flex-wrap: wrap;
         gap: rem(8);
-        //width: rem(278);
-        //overflow: hidden;
-        //margin: 0 auto;
         @include adaptiveValue("padding-top", 65, 30);
         @include adaptiveValue("padding-bottom", 20, 20);
         @media (max-width: em(1296)){
@@ -60,9 +56,6 @@
             flex-wrap: nowrap; 
         }
     }
-
-    // .services__slide
-
     &__slide {
         width: rem(279) !important;
         border-radius: rem(30);
@@ -80,12 +73,6 @@
             }
         }
     }
-
-    // .services__descr
-
-    &__descr {
-    }
-
     // .services__button
     &__body {
         position: relative;
@@ -97,6 +84,7 @@
         position: relative;
         margin: 0 auto;
         justify-content: center !important;
+        z-index: 1;
     }
 }
 
@@ -156,5 +144,17 @@
         }
         
     }
+}
+.swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    color: $mainGreen;
+    right: 50%;
+    transform: translateX(-50%);
+    height: 15px;
+    width: 15px;
+    display: block;
+    background-color: $mainGreen;
+    border-radius: 50%;
 }
 
