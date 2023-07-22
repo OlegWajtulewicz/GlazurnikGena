@@ -2,12 +2,9 @@
     background-color: #fff;
     @include adaptiveValue("padding-top", 50, 20);
     @include adaptiveValue("padding-bottom", 50, 20);
-    // .services__container
     overflow: hidden;
     box-shadow: 0px 0px 40px -6px rgba(29, 117, 101, 0.20);
-    &__container {
-    }
-
+    
     // .services__title
 
     &__title {
@@ -40,7 +37,6 @@
         
     }
 
-
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -67,7 +63,6 @@
             img {
                 width: 100% !important;
                 overflow: hidden;
-                //margin: 0 auto;
                 justify-content: center;
                 display: flex;
             }
@@ -87,14 +82,14 @@
         z-index: 1;
     }
 }
-
+//=========================================================================
 .swiper {
     &__container {
         overflow: hidden;
 	    width: 100%;
     }
 }
-
+// ================================================================ 
 .descr-services {
     display: flex;
     align-items: center;
@@ -145,16 +140,16 @@
         
     }
 }
-.swiper-pagination {
-    position: absolute;
-    bottom: 0;
-    color: $mainGreen;
-    right: 50%;
-    transform: translateX(-50%);
-    height: 15px;
-    width: 15px;
-    display: block;
-    background-color: $mainGreen;
-    border-radius: 50%;
-}
+// .swiper-pagination {
+//     position: absolute;
+//     bottom: 0;
+//     color: $mainGreen;
+//     right: 50%;
+//     transform: translateX(-50%);
+//     height: 15px;
+//     width: 15px;
+//     display: block;
+//     background-color: $mainGreen;
+//     border-radius: 50%;
+// }
 

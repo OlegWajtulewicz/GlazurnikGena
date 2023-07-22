@@ -95,11 +95,16 @@ function initSliders() {
 	}
 	if (document.querySelector('.testimonials__slider')) {
 		new Swiper('.testimonials__slider', {
-			//effect: 'fade',
+			//modules: [Navigation, Pagination ],
+			effect: 'fade',
 			observer: true,
 			slidesPerView: 3,
 			spaceBetween: 20,
 			loop: true,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			  },
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
