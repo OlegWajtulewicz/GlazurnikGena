@@ -21,7 +21,9 @@
     }
     &__title {
         position: relative;
-        &::before{
+        max-width: rem(200);
+        margin: 0 auto;
+        &::before {
             content:'';
             position: absolute;
             height: rem(4);
@@ -31,6 +33,15 @@
             bottom: rem(-10);
             right: 50%;
             transform: translate(50%);
+            transition: all 1s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+					left: -50%;
+                }
+            }
         }
     }
     
@@ -69,9 +80,16 @@
             @media (max-width: $mobile) {
                 width: 100%;
             }
+            @media (any-hover: hover){
+                &:hover{
+                    //transform: scale(1.01);
+                    transition: all 0.3s;
+                    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+                }
+            }
         }
         
-		}
+	}
 }
 //============================================================================================
 .services-items {
@@ -81,7 +99,6 @@
     @include adaptiveValue("padding-top", 50, 20);
     @include adaptiveValue("padding-bottom", 100, 110);
     &__container {
-        
         display: flex;
         flex-direction:column;
         span {
@@ -95,7 +112,6 @@
             @media (any-hover: hover){
                 &:hover{
                     transition: all .3s ease 0s;
-                    
                     font-weight: 900;
                 }
             }
@@ -103,7 +119,9 @@
     }
     &__title {
         position: relative;
-        &::before{
+        margin: 0 auto;
+        max-width: rem(200);
+        &::before {
             content:'';
             position: absolute;
             height: rem(4);
@@ -113,6 +131,15 @@
             bottom: rem(-10);
             right: 50%;
             transform: translate(50%);
+            transition: all 1s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+					left: -50%;
+                }
+            }
         }
     }
     &__body {
@@ -142,6 +169,14 @@
         min-height: rem(185);
         padding: rem(10);
         text-align: center;
+        border-radius: rem(20);
+        @media (any-hover: hover){
+            &:hover{
+                //transform: scale(1.01);
+                transition: all 0.3s;
+                box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+            }
+        }
     }
     &__header {
         padding: rem(30);
@@ -245,7 +280,9 @@
 
     &__title {
         position: relative;
-        &::before{
+        margin: 0 auto;
+        max-width: rem(280);
+        &::before {
             content:'';
             position: absolute;
             height: rem(4);
@@ -255,6 +292,15 @@
             bottom: rem(-10);
             right: 50%;
             transform: translate(50%);
+            transition: all 1s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+					left: -50%;
+                }
+            }
         }
     }
     &__slider {
@@ -263,16 +309,18 @@
     }
 
 
-    &__wrapper {
-       
-    }
-
     &__slide {
         min-height: 15.375rem;
         border-radius: 1.875rem;
         background: #FFF;
         box-shadow: 0px 20px 50px -15px rgba(29, 117, 101, 0.20);
-
+        @media (any-hover: hover){
+            &:hover{
+                //transform: scale(1.01);
+                transition: all 0.3s;
+                box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+            }
+        }
     }
 
     &__btn {

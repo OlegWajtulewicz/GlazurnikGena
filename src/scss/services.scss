@@ -9,7 +9,9 @@
 
     &__title {
         position: relative;
-        &::before{
+        max-width: 18.75rem;
+        margin: 0 auto;
+        &::before {
 			content:'';
 			position: absolute;
 			height: rem(4);
@@ -19,7 +21,16 @@
 			bottom: rem(-10);
             right: 50%;
             transform: translate(50%);
+            transition: all 1s;
 		}
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+					left: -50%;
+                }
+            }
+        }
     }
 
     // .services__slider
@@ -59,14 +70,25 @@
             width: 100% !important;
             margin: 0;
             flex-shrink: 0; 
-            
             img {
                 width: 100% !important;
                 overflow: hidden;
                 justify-content: center;
                 display: flex;
+                border-radius: rem(30);
             }
         }
+        img {
+            border-radius: rem(50);
+            @media (any-hover: hover){
+                &:hover{
+                    //transform: scale(1.01);
+                    transition: all 0.3s;
+                    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+                }
+            }
+        }
+        
     }
     // .services__button
     &__body {
@@ -107,7 +129,7 @@
         height: rem(50);
         position: relative;
         margin-right: em(10);
-        &::before{
+        &::before {
             content:'';
             width: rem(4);
             height: rem(50);

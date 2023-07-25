@@ -56,8 +56,7 @@
 
     // .footer__contacts-form
 
-    &__contacts-form {
-    }
+    
 
     // .footer__contacts
 
@@ -82,10 +81,18 @@
             border-radius: rem(10);
             background: $mainGreen;
             bottom: rem(-10);
-            
+            transition: all 1s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+					left: 0;
+                }
+            }
         }
         @media (min-width: $tablet) {
-            pointer-events: none; 
+            //pointer-events: none; 
         }
         &:not(:last-child) {
             margin-bottom: rem(25);
@@ -198,6 +205,13 @@
 }
 textarea.input {
     padding: rem(13) rem(18) !important; 
+    @media (any-hover: hover){
+        &:hover{
+            //transform: scale(1.01);
+            transition: all 0.3s;
+            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        }
+    }
 }
 .file-form {
     display: flex;
@@ -415,3 +429,12 @@ textarea.input {
 //         transition: all .5s;
 //     }
 // }
+input {
+    @media (any-hover: hover){
+        &:hover{
+            //transform: scale(1.01);
+            transition: all 0.3s;
+            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        }
+    }
+}
